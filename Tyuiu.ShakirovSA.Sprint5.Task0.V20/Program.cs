@@ -15,6 +15,7 @@ internal class Program
         string res = ds.SaveToFileTextData(2);
         Console.WriteLine("Файл: " + res);
         Console.WriteLine("Создан");
+        Console.WriteLine();
         Console.ReadKey();
     }
 }
