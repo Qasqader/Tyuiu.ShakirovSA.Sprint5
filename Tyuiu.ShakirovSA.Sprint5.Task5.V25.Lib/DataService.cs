@@ -16,11 +16,14 @@ namespace Tyuiu.ShakirovSA.Sprint5.Task5.V25.Lib
                     foreach (string numberStr in numbers)
                     {
                         double number = Convert.ToDouble(numberStr, CultureInfo.InvariantCulture);
-                        res *= number;
+                        if (number % 1 != 0)
+                        {
+                            res *= number;
+                        }
                     }
                 }
             }
-            return res;
+            return Math.Round(res, 3);
         }
     }
 }
