@@ -25,10 +25,12 @@ namespace Tyuiu.ShakirovSA.Sprint5.Task7.V25.Lib
                             strline = strline + line[i];
                         }
                     }
-
-                    File.AppendAllText(pathSave, strline + Environment.NewLine);
-                    strline = "";
                 }
+                strline = System.Text.RegularExpressions.Regex.Replace(strline, @"\s+([.,!?;:])", "$1");
+                strline = System.Text.RegularExpressions.Regex.Replace(strline, @"\s+", " ");
+                strline = strline.Trim();
+                File.AppendAllText(pathSave, strline + Environment.NewLine);
+
                 return pathSave;
             }
         }
